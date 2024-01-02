@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root {
+  --bg-color: linear-gradient(to bottom right, #FFA732, #FFE382);
+  --shadow: 4px 4px 25px 5px #C69774;
+  --card-bg-color: #FFF0CE;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 300px;
+  min-width: 300px;
+  height: 600px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  background: var(--card-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  letter-spacing: 0.5rem;
+  margin-bottom: 28%;
+}
+
+#submit-form {
+  position: absolute;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  transform: translateY(32px);
+  gap: 8px;
+}
+
+#submit-form.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 500ms ease-out;
+}
+
+.email-ph, .email-pw {
+  width: 73%;
+  padding: 0.7rem;
+  border-radius: 25px;
+  border: 1px solid #000;
+}
+.btns-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20%;
+}
+
+.btn {
+  font-size: 1rem;
+  border: none;
+  border-radius: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  justify-content: flex-start;
+  padding: 0.6rem 0 0.6rem 1rem;
+  gap: 1rem;
+  box-shadow: 0px 1px 5px 0.5px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+#email {
+  background-color: #FFC436;
+  border: 2px solid #FFC436;
+}
+
+#email:hover {
+  background-color: #fff;
+  color: #FFC436;
+}
+
+#facebook {
+  background-color: #1877F2;
+  border: 2px solid #1877F2;
+}
+
+#facebook:hover {
+  background-color: #fff;
+  color: #1877F2;
+}
+
+#google {
+  background-color: #fefefe;
+  color: #000;
+  border: 2px solid #fefefe;
+}
+
+#google:hover {
+  background-color: #000;
+  color: #fefefe;
+}
+
+.q-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.sign-up {
+  text-decoration: underline;
+}
+
+.sign-up:hover {
+  cursor: pointer;
+  color: #777;
+}
+
+.terms {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  width: 65%;
+  text-align: center;
+  line-height: 1.3rem;
+  margin-top: 10%;
+}
+
+.terms > a {
+  color: #000;
+}
+
+.terms > a:hover {
+  color: #777;
+}
+
+.honey-pot {
+  position: absolute;
+  top: 15%;
+  opacity: 0;
+}
+.hide{
+  opacity: 0;
+  transition: all 500ms ease;
+}
+.reveal-form{
+  opacity: 1;
+  visibility: visible;
+  transition: all 2s ease;
+}
+.honey-animation{
+  animation: honeypot 3s forwards;
+}
+.bee-animation {
+  animation: fly 3s forwards;
+}
+.remove-honey-pot {
+  animation: remove-pot 2s forwards;
+}
+.bee-fly-back {
+  animation: fly-back 2s forwards;
+}
+
+.collapse-email {
+  animation: collapse-email 1s forwards;
+}
+.collapse-fb {
+  animation: collapse-fb 1s forwards;
+}
+.password-input-up {
+  animation: move-up 350ms forwards;
+}
+/* bee animation */
+@keyframes fly {
+  0% {
+    transform: translate(0px, 0);
+  }
+  50% {
+    transform: translate(400px, 50px) scaleX(-1);
+  }
+  100% {
+    transform: translate(200px, 100px) scaleX(-1);
+  }
+}
+@keyframes honeypot {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  70% {
+    transform: rotate(-35deg);
+    top: 38%;
+  }
+  90% {
+    transform: rotate(10deg);
+    top: 38%;
+  }
+  100% {
+    top: 40%;
+    opacity: 1;
+  }
+}
+@keyframes fly-back {
+  0% {
+    transform: translate(200px, 100px) scaleX(-1);
+  }
+  30% {
+    transform: translate(0, 40px) scaleX(-1);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: translate(0, 0) scaleX(1);
+  }
+}
+@keyframes remove-pot {
+  0% {
+    top: 40%;
+    opacity: 1;
+  }
+  30% {
+    top: 38%;
+    opacity: 1;
+    transform: rotate(35deg);
+  }
+  100% {
+    transform: translate(-500px, -500px) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes collapse-email {
+  100% {
+    transform: translateY(101px);
+  }
+}
+@keyframes collapse-fb {
+  100% {
+    transform: translateY(51px);
+  }
+}
+
+@keyframes move-up {
+  100% {
+    transform: translateY(-50px);
+  }
+}
